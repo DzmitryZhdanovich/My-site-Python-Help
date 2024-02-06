@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}      
+    <h2>Add a new post</h2>
+    <!--action - описание адреса, куда отправляется наш submit, вместо action вводим method -->
+    <!--method="post" - конкретизируем, что вызов по методу post, значит, отправка формы с данными на обработку -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!--form.as_p – отрисовка формы в виде параграфа-->
+        {{form.as_p}}
+
+        <button type="submit">Add</button>
+             </form>
+{% endblock %}
+                
